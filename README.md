@@ -7,4 +7,5 @@
 ### Popups provide additional information about the earthquake when its associated marker is clicked.
 ### A legend provides context for the map color data.
 ### The displayed area chosen for this map focuses on the earthquake-rich western half of the United States.
+### Livev view can be found at: https://mark-lech.com/Leaflet-USGS-Data-Visualization/
 ![Screenshot of Leaflet Visualization](./Images/screenshot.jpg)
