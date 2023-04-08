@@ -1,6 +1,6 @@
 // Create a map object
 var myMap = L.map("map", {
-    center: [37.09, -110],
+    center: [37, -110],
     zoom: 6
   });
 
@@ -58,5 +58,25 @@ d3.json(url).then(function(response) {
             `)
         }
     }).addTo(myMap);
+
+    // create legend
+    let legend = L.control({
+        position: "bottomleft"
+    });
+
+    //write the legend to the index file looping through the colors and values
+    legend.onAdd = function(){
+        let container = L.DomUtil.create("div", "info legend");
+        let depthRange = [0,6,12,18,24];
+        let colors = ["yellow", "gold", "orange", "red", "darkred"];
+        container.innerHTML = `<b>Depth</b><br>`
+        for(let index = 0; index < depthRange.length; index++){
+            container.innerHTML +=
+            `<i style="background: ${colors[index]}; color: ${colors[index]}">. </i> 
+            ${depthRange[index]}+<br>`
+        }
+        return container;
+    }
+    legend.addTo(myMap);
 
 });
